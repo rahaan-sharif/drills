@@ -1,0 +1,62 @@
+#include <iostream>
+using namespace std; 
+
+class q
+{
+	char* a;
+	int count;
+	int rear;
+public:
+	q(int length = 0): count(length)
+	{
+		a = new char[count];
+	}
+	~q() { delete [] a; }
+	void set(void);
+	void insert(char);
+	char remove(void);
+};
+
+void q::set(void)
+{
+	rear = 0;
+}
+void q::insert(char c)
+{
+	if (rear == count)
+	{
+		cout << "FULL!\N";
+		return;
+	}
+	a[rear++] = c;
+}
+char q::remove()
+{
+	if (rear == 0)
+	{
+		cout << "EMPTY!\n";
+		return 0;
+	}
+	char temp = a[0];
+	for (int i = 0; i < count; i++)
+	{
+		a[i] = a[i + 1];
+	}
+	rear--;
+	return temp;
+}
+
+int main(void)
+{
+	q ob(5);
+	char temp = 'a';
+	for (int i = 0; i < 5; i++)
+		ob.insert(temp++);
+	for (int i = 0; i < 5; i++)
+		cout << ob.remove() << endl;
+	
+
+
+
+	return 0;
+}
