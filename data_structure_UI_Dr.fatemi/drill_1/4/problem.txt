@@ -1,0 +1,4 @@
+in this program, we want to add to numbers that we don't know 
+how digits do they have.
+in first and second lines of the program, we insert our numbers
+snd in third line, we get resault.
