@@ -86,11 +86,22 @@ int main(void)
 
           string l;
           getline(cin, l);
+          int value=0;
           for (int i = 0; i < l.length(); i++)
           {
-                    if (i % 2 == 0)
+                    if (l[i]!=' ' && i!=l.length()-1)
+                              value=value*10+l[i]-48;
+
+                    else if(i==l.length()-1)
                     {
-                              start->make_node(start, l[i] - 48);
+                              value=value*10 + l[i]-48;
+                              start->make_node(start, value);
+                              value=0;
+                    }
+                    else if(l[i]==' ')
+                    {
+                              start->make_node(start, value);
+                              value=0;
                     }
           }
 
