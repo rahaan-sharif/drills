@@ -20,7 +20,7 @@ public:
     //This algorithm tries to make level order compliting of the tree
     //but not exactly what we learned in DAta Structures;
     //It tries to make balance between left and right leaves of the root
-    //and each node.
+    //and each node. Every node can have just one more node in left leaves than right one.
     int make_tree(TREE*& start, int data_in)
     {
         if(start==NULL)
